@@ -22,7 +22,7 @@ class PotoController
 			if ($class->verifEmailCo() == true) {
 				$requete = new PotoModel();
 				$requete->connexion();
-				include("View/Oute.php");
+				include("View/Outay.php");
 			}
 		}
 	}
