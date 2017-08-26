@@ -6,7 +6,7 @@ class Database
     public static function instance() {
         if (is_null(static::$bdd)) {
             try {
-                self::$bdd = new PDO("mysql:host=localhost;dbname=potooutes", "root", "");
+                self::$bdd = new PDO("mysql:host=localhost;dbname=potooutay", "test", "test");
                 } catch (Exception $e) {
                 die('Erreur : ' . $e->getMessage());
             }
