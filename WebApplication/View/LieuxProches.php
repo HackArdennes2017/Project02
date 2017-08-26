@@ -7,7 +7,7 @@
 <style>
 
 html {
-    background-image: url("../assets/img/backgrounds/fond_ecran_cut.png");
+    background-image: url("assets/img/backgrounds/fond_ecran_cut.png");
     background-color: #F1622A;
     background-size: 100% 100%;
 		background-size:  cover;
@@ -107,14 +107,14 @@ div.desc{
   <tr>
     <td>
       <div>
-        <img src="../assets/img/Lieu_strategique/entree.png" width="150" height="150">
+        <img src="assets/img/Lieu_strategique/entree.png" width="150" height="150">
         <div class="desc">
           à 10m
         </div>
       </div>
     </td>
     <td>
-      <img src="../assets/img/Lieu_strategique/zanzibar.png" width="150" height="150">
+      <img src="assets/img/Lieu_strategique/zanzibar.png" width="150" height="150">
       <div class="desc">
         à 42m
       </div>
@@ -122,13 +122,13 @@ div.desc{
   </tr>
   <tr>
   <td>
-    <img src="../assets/img/Lieu_strategique/camping.png" width="150" height="150">
+    <img src="assets/img/Lieu_strategique/camping.png" width="150" height="150">
     <div class="desc">
       à 45m
     </div>
   </td>
   <td>
-    <img src="../assets/img/Lieu_strategique/groingroin.png" width="150" height="150">
+    <img src="assets/img/Lieu_strategique/groingroin.png" width="150" height="150">
     <div class="desc">
       à 50m
     </div>

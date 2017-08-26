@@ -32,6 +32,14 @@ class PotoController
 			include("View/accueuil.php");
 		}
 	}
+
+	public function choisir() {
+		include("View/Outay_choisir_action.php");
+	}
+
+	public function lieux() {
+		include("View/LieuxProches.php");
+	}
 }
 
 include("Verification.php");

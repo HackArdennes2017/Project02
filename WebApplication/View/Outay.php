@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <style>
 
 html {
-    background-image: url("../assets/img/backgrounds/fond_ecran_cut.png");
+    background-image: url("assets/img/backgrounds/fond_ecran_cut.png");
     background-color: #F1622A;
     background-size: 100% 100%;
 		background-size:  cover;
@@ -33,7 +33,7 @@ input[type=text], select {
 }
 
 .InputButton{
-	background:url("../assets/img/backgrounds/logo_potooutay.png");
+	background:url("assets/img/backgrounds/logo_potooutay.png");
 	background-repeat: no-repeat;
 	background-color: #F1622A;
 	background-position: center;
@@ -80,6 +80,6 @@ input[type=text], select {
 <footer class="FooterStyle">
   Messages / Liste des copains
 </footer>
-
+ <script src="assets/js/myscripts.js"></script> 
 </body>
 </html>
