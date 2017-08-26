@@ -40,6 +40,10 @@ class PotoController
 	public function lieux() {
 		include("View/LieuxProches.php");
 	}
+
+	public function boussolle() {
+		include("View/Boussolle.php");
+	}
 }
 
 include("Verification.php");

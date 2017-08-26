@@ -1,0 +1,161 @@
+<html>
+<head><title>Calculate distance and angle based on geolocation data</title></head>
+
+<script>
+
+// calculates the distance between two coordinates in [km]
+function CalculateDistance(latLostPerson, longLostPerson, latHelpingPerson, longHelpingPerson){
+	// constants for distance between meridians and circles of latitude
+	var cDLat  = 111.3;
+	var cDLong = 71.5;
+
+	// calculate distance in latitude and longitude direction
+	var dx = cDLong * (longLostPerson - longHelpingPerson);
+	var dy = cDLat * (latLostPerson - latHelpingPerson);
+
+	// calculate the distance between these pg_connection_status
+	var distance = Math.sqrt(Math.pow(dx,2) + Math.pow(dy,2));
+	// return calculated distance
+	return distance;
+}
+
+// calculates the bearing angle from the searching person towards the lost person in [degrees]
+function CalculateAngleTowardsLostPerson(latLostPerson, longLostPerson, latHelpingPerson, longHelpingPerson){
+	// calculate the bearing angle using the haversine formula
+	// first convert given coordinates from degrees to radians
+	var phiB    = latHelpingPerson * Math.PI / 180;
+	var phiA    = latLostPerson * Math.PI / 180;
+	var lambdaB = longHelpingPerson * Math.PI / 180;
+	var lambdaA = longLostPerson * Math.PI / 180;
+	// calculate bearing angle using haversine formula
+	var y=Math.sin(lambdaB - lambdaA)*Math.cos(phiB);
+	var x=Math.cos(phiA)*Math.sin(phiB)-Math.sin(phiA)*Math.cos(phiB)*Math.cos(lambdaB - lambdaA);
+	var brng = Math.atan2(y,x)*180/Math.PI;
+	// map angle to range [0 360]
+
+	brng = (brng+180)%360;
+	return brng;
+}
+
+function init()
+{
+		// Test parameters
+		//Latitude,Longitude
+		var dLatPerson1 = 49.75133413;
+		var dLatPerson2 = 49.75132026;
+		var dLatPerson3 = 49.75076223;
+		var dLatPerson4 = 49.75077263;
+		var dLongPerson1 = 4.714776277;
+		var dLongPerson2 = 4.715629220;
+		var dLongPerson3 = 4.715591669;
+		var dLongPerson4 = 4.714824557;
+
+		// Test pattern
+
+		document.write ("Person 1 is lost, Persons 2 to 4 are searching");
+
+		var myDist =                CalculateDistance(dLatPerson1, dLongPerson1, dLatPerson2, dLongPerson2);
+		var myAngle = CalculateAngleTowardsLostPerson(dLatPerson1, dLongPerson1, dLatPerson2, dLongPerson2);
+
+		document.write("Distance between Person 2 and Person 1 person:"+ myDist+" km");
+
+		document.write("Angle from Person 2 towards Person 1 person: myAngle °");
+
+		myDist =                CalculateDistance(dLatPerson1, dLongPerson1, dLatPerson3, dLongPerson3);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson1, dLongPerson1, dLatPerson3, dLongPerson3);
+
+		document.write("Distance between Person 3 and Person 1 person: myDist km");
+
+		document.write("Angle from Person 3 towards Person 1 person: myAngle °");
+
+		myDist =                CalculateDistance(dLatPerson1, dLongPerson1, dLatPerson4, dLongPerson4);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson1, dLongPerson1, dLatPerson4, dLongPerson4);
+
+		document.write("Distance between Person 4 and Person 1 person: myDist km");
+		document.write("Angle from Person 4 towards Person 1 person: myAngle °");
+
+		document.write("Person 2 is lost, Persons 1, 3 to 4 are searching");
+
+		myDist =                CalculateDistance(dLatPerson2, dLongPerson2, dLatPerson1, dLongPerson1);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson2, dLongPerson2, dLatPerson1, dLongPerson1);
+
+		document.write("Distance between Person 1 and Person 2 person: myDist km");
+
+		document.write("Angle from Person 1 towards Person 2 person: myAngle °");
+
+		myDist =                CalculateDistance(dLatPerson2, dLongPerson2, dLatPerson3, dLongPerson3);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson2, dLongPerson2, dLatPerson3, dLongPerson3);
+
+		document.write("Distance between Person 3 and Person 2 person: myDist km");
+
+		document.write("Angle from Person 3 towards Person 2 person: myAngle °");
+
+		myDist =                CalculateDistance(dLatPerson2, dLongPerson2, dLatPerson4, dLongPerson4);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson2, dLongPerson2, dLatPerson4, dLongPerson4);
+
+		document.write("Distance between Person 4 and Person 2 person: myDist km");
+
+		document.write("Angle from Person 4 towards Person 2 person: myAngle °");
+
+
+
+
+		document.write("Person 3 is lost, Persons 1, 2 & 4 are searching");
+
+		myDist =                CalculateDistance(dLatPerson3, dLongPerson3, dLatPerson1, dLongPerson1);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson3, dLongPerson3, dLatPerson1, dLongPerson1);
+
+		document.write("Distance between Person 1 and Person 3 person: myDist km");
+
+		document.write("Angle from Person 1 towards Person 3 person: myAngle °");
+
+		myDist =                CalculateDistance(dLatPerson3, dLongPerson3, dLatPerson2, dLongPerson2);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson3, dLongPerson3, dLatPerson2, dLongPerson2);
+
+		document.write("Distance between Person 2 and Person 3 person: myDist km");
+
+		document.write("Angle from Person 2 towards Person 3 person: myAngle °");
+
+		myDist =                CalculateDistance(dLatPerson3, dLongPerson3, dLatPerson4, dLongPerson4);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson3, dLongPerson3, dLatPerson4, dLongPerson4);
+
+		document.write("Distance between Person 4 and Person 3 person: myDist km");
+
+		document.write("Angle from Person 4 towards Person 3 person: myAngle °");
+
+
+		document.write("Person 4 is lost, Persons 1 to 3 are searching");
+
+		myDist =                CalculateDistance(dLatPerson4, dLongPerson4, dLatPerson1, dLongPerson1);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson4, dLongPerson4, dLatPerson1, dLongPerson1);
+
+		document.write("Distance between Person 1 and Person 4 person: myDist km");
+
+		document.write("Angle from Person 1 towards Person 4 person: myAngle °");
+
+		myDist =                CalculateDistance(dLatPerson4, dLongPerson4, dLatPerson2, dLongPerson2);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson4, dLongPerson4, dLatPerson2, dLongPerson2);
+
+		document.write("Distance between Person 2 and Person 3 person: myDist km");
+
+		document.write("Angle from Person 2 towards Person 3 person: myAngle °");
+
+		myDist =                CalculateDistance(dLatPerson4, dLongPerson4, dLatPerson3, dLongPerson3);
+		myAngle = CalculateAngleTowardsLostPerson(dLatPerson4, dLongPerson4, dLatPerson3, dLongPerson3);
+
+		document.write("Distance between Person 3 and Person 4 person: myDist km");
+
+		document.write("Angle from Person 3 towards Person 4 person: myAngle °");
+}
+
+</script>
+<body onload="init()">
+
+
+<h2>Calculate distance and angle</h2>
+
+
+
+
+</body>
+</html>
