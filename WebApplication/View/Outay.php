@@ -11,7 +11,7 @@ html {
     background-color: #F1622A;
     background-size: 100% 100%;
 		background-size:  cover;
-    height: 600px;
+    height: 650px;
     background-repeat: no-repeat;
 
     position: relative;
@@ -80,6 +80,6 @@ input[type=text], select {
 <footer class="FooterStyle">
   Messages / Liste des copains
 </footer>
- <script src="assets/js/myscripts.js"></script> 
+ <script src="assets/js/myscripts.js"></script>
 </body>
 </html>

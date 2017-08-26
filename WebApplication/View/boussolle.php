@@ -4,6 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+  <script>
+
+           
+            function init() {
+              
+              var positionBoussole=0;
+        
+              //Check for support for DeviceOrientation event
+              if(window.DeviceOrientationEvent) {
+                        window.addEventListener('deviceorientation', function(event) {
+                        var alpha = event.alpha;
+                        var beta = event.beta;
+                        var gamma = event.gamma;
+                      
+                        if(alpha!=null || beta!=null || gamma!=null) ;
+                         // dataContainerOrientation.innerHTML = 'alpha: ' + alpha + '<br/>beta: ' + beta + '<br />gamma: ' + gamma;
+                      }, false);
+              }
+        
+              // Check for support for DeviceMotion events
+              if(window.DeviceMotionEvent) {
+              window.addEventListener('devicemotion', function(event){
+                        var x = event.accelerationIncludingGravity.x;
+                        var y = event.accelerationIncludingGravity.y;
+                        var z = event.accelerationIncludingGravity.z;
+                        var r = event.rotationRate;
+                        if(r!=null) positionBoussole += r.alpha;                 
+                      });
+              }
+
+                $('img').css({'transform':'rotate('+positionBoussole+'deg)'});
+            }
+
+        function Rotationboussole() {
+       
+          setTimeout(init(),300000);
+          
+        } 
+
+    </script>
+
+
 <style>
 
 html {
@@ -60,10 +103,15 @@ input[type=text], select {
   font-style: normal;
   color: #d0cccc;
 }
+
+img{
+  transform: rotate(90deg); /* IE 9 */
+}
+
 </style>
 	<title>Test</title>
 </head>
-<body>
+ <body onload="init()">
 
   <header>
 
@@ -75,11 +123,14 @@ input[type=text], select {
 
 <section class="SectionStyle">
 
-Boussolle
+<img src="../assets/img/backgrounds/fleche_haut.png">
+
 </section>
+<button onclick="Rotationboussole()">Try it</button>
 <footer class="FooterStyle">
   Messages / Liste des copains
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
 </html>
