@@ -13,11 +13,6 @@
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="shortcut icon" href="View/assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="View/assets/ico/apple-touch-icon-57-precomposed.png">
 
     </head>
 
@@ -30,19 +25,19 @@
                 	
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>PotoOutay</strong></h1>
+                            <img src="assets/img/backgrounds/logo_potooutay.png">
                             <div class="description">
-                            	<p>
-	                            	Retrouve tes amis <strong>"Incris-toi ou connecte-toi!"</strong>
-                            	</p>
+                            	<h1>
+	                            	Retrouve tes amis!
+                            	</h1>
                             </div>
                         </div>
                     </div>
                     
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 bordure">
                         	
-                        	<div class="form-box">
+                        	<div class="form-box" id="connexion">
 	                        	<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Connection</h3>
@@ -71,9 +66,9 @@
                         <div class="col-sm-1 middle-border"></div>
                         <div class="col-sm-1"></div>
                         	
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 bordure">
                         	
-                        	<div class="form-box">
+                        	<div class="form-box" id="inscription">
                         		<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Inscription</h3>
@@ -125,7 +120,7 @@
         			
         			<div class="col-sm-8 col-sm-offset-2">
         				<div class="footer-border"></div>
-        				<p>Made by <strong>PotoOuté</strong></a> 
+        				<p>Made by <strong>PotoOutay</strong></a> 
         					having a lot of fun. <i class="fa fa-smile-o"></i></p>
         			</div>
         			

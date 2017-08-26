@@ -1,0 +1,89 @@
+body {
+  padding: 0px;
+  margin:0px;
+  background: #ac699c url(http://to.horizondvp.org/im/adm/images/ios7.jpg) no-repeat left top fixed;
+background-size: cover;
+}
+
+
+/* Header content */
+.content {
+  width:100%;
+  border-radius:5px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(254, 182, 203, 0.5);
+  min-height:200px;
+  margin:0 auto;
+  margin-top:50px;
+}
+
+
+/* Menu selection */
+.menu {
+  margin-left:10px;
+  display: inline-block;
+  width: 100%;
+  min-height:200px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.menu ul li {
+  display:inline-block;
+
+  width:180px;
+  list-style-type: none; 
+  padding:10px;
+  border-bottom:1px solid rgba(0, 0, 0, 0.25);
+ }
+.menu ul {
+  list-style-type: none; 
+  padding:0px;
+  margin:0px;
+}
+.menu ul li:hover {
+  background: rgba(0, 0, 0, 0.25);
+  width:180px;
+  list-style-type: none; 
+  cursor:pointer;
+  padding:10px;
+  border-bottom:1px solid  rgba(0, 0, 0, 0.35);
+ }
+
+/* Container selection */
+
+.container {
+  width:99%; 
+  display:none;
+  min-height:200px;
+  background-color: rgba(0, 0, 0, 0.25);
+  margin-right:10px;
+  float:right;
+}
+ 
+/* Products */
+.product {
+  
+  background-color: rgba(0, 0, 0, 0.25);
+  height:90px;
+  padding:10px;
+  text-align:center;
+}
+.product p {
+  height:70px;
+}
+
+/* Table style */
+.container  table{
+  width:100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.container  table thead{ 
+  width:100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  text-align:center;
+  color:#f88888;
+}
+.container  table tbody{
+  width:100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+}

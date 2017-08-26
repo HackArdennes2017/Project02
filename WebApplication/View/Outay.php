@@ -1,85 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-
-html {
-    background-image: url("../assets/img/backgrounds/fond_ecran_cut.png");
-    background-color: #F1622A;
-    background-size: 100% 100%;
-		background-size:  cover;
-    height: 600px;
-    background-repeat: no-repeat;
-
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
-input[type=text], select {
-    width: 480px;
-    padding: 12px 20px;
-    margin: 8px 0;
-		font-size: 16px;
-		font-style: italic;
-    color: #d0cccc;
-    display: inline-block;
-    border: none;
-    border-radius: 40px;
-    box-sizing: border-box;
-		background-color: #928783;
-}
-
-.InputButton{
-	background:url("../assets/img/backgrounds/logo_potooutay.png");
-	background-repeat: no-repeat;
-	background-color: #F1622A;
-	background-position: center;
-  background-size: 80%;
-	cursor:pointer;
-	border-radius: 50%;
-	border:1px solid #F1622A;
-	width:200px;
-	height:200px;
-	position: relative;
-	margin-top: 40%;
-	margin-left: 33%;
-}
-.InputButton:active{
-	transform: scale(1.05);
-}
-
-.SectionStyle{
-  height: 500px;
-}
-
-.FooterStyle{
-  font-size: 16px;
-  font-style: normal;
-  color: #d0cccc;
-}
-</style>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/Outay.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<title>Test</title>
 </head>
 <body>
-
-  <header>
-
-<input type="text" id="lname" name="lastname" placeholder="Rechercher un pseudo">
-  </header>
-
-
-
-
-<section class="SectionStyle">
-
-	<input class="InputButton" type="submit" value="">
-</section>
-<footer class="FooterStyle">
-  Messages / Liste des copains
-</footer>
-
+    <div class="content">
+        <div class="menu">
+          <ul>
+            <li prop='1'>Group 1</li> 
+            <li prop='2'>Group 2</li> 
+            <li prop='3'>Group 3</li> 
+          </ul>
+		    <div class="container">
+		            <div class="product">
+		                 
+		                  <p prop='orange' class="orange block" title="select orange" href="#orange">groupe 1</p>
+		              
+		                  <p prop='cellcom' class="cellcom block" title="select cellcom" href="#cellcom">groupe 2</p>
+		                
+		                  <p prop='pelephone' class="pelephone block" title="select pelephone" href="#pelephone">groupe 3</p>		               
+		            </div>
+		     </div>
+        </div>
+    </div>
+     <script src="assets/js/Outay.js"></script> 
 </body>
 </html>

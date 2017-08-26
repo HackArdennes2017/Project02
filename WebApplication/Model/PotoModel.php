@@ -31,10 +31,5 @@ class PotoModel
 				$_SESSION['prenom'] = $row['prenom'];
 			}
 		}
-		else {
-			echo "Cette adresse email n'existe pas.";
-			header('Location: index.php?controller=PotoController&action=accueil');
-			return false;
-		}
 	}
 }

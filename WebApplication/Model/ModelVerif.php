@@ -22,17 +22,21 @@ class ModelVerif
 
 	public function verifEmailCo() {
 		$this->connect = Database::instance();
-		$sql = $this->connect->prepare("SELECT email
+		$sql = $this->connect->prepare("SELECT email, mdp
 										FROM user
 										WHERE email = :email");
 		$sql->bindValue(':email', $_POST['form-username']);
 		if ($sql->execute()) {
-			$result = $sql->fetch();
-			if ($result[0] == $_POST['form-username']) {
-				return true;
-			}
-			else {
-				return false;
+			$result = $sql->fetchAll();
+			foreach ($result as $row) {
+				if ($row['email'] == $_POST['form-username'] && password_verify($_POST['form-password'], $row['mdp'])) {
+					return true;
+				}
+				else {
+					include('View/accueuil.php');
+					echo "Adresse email ou mot de passe invalide";
+					return false;
+				}
 			}
 		}
 	}
