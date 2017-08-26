@@ -4,7 +4,6 @@
 class PotoController
 {
 	public function accueil() {
-		include('View/accueuil.php');
 		$ver = new Verification();
 		if ($ver->verifInscription() == true) {
 			$class = new ModelVerif();
@@ -13,6 +12,7 @@ class PotoController
 				$requete->inscription() == true;
 			}
 		}
+		include('View/accueuil.php');
 	}
 
 	public function connexion() {
@@ -33,8 +33,11 @@ class PotoController
 		}
 	}
 
-	public function choisir() {
-		include("View/Outay_choisir_action.php");
+
+
+	public function recherche() {
+		$ver = new PotoModel();
+		$ver->recherche();
 	}
 
 	public function lieux() {

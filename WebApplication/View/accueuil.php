@@ -28,7 +28,7 @@
                             <img src="assets/img/backgrounds/logo_potooutay.png">
                             <div class="description">
                             	<h1>
-	                            	Retrouve tes amis!
+	                            	Retrouve tes potes en deux clics !
                             	</h1>
                             </div>
                         </div>
@@ -41,17 +41,17 @@
 	                        	<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Connection</h3>
-	                            		<p>Entre ton adresse email et ton mot de passe</p>
+	                            		<p>Entre ton pseudo et ton mot de passe</p>
 	                        		</div>
 	                        		<div class="form-top-right">
 	                        			<i class="fa fa-lock"></i>
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="index.php?controller=PotoController&action=connexion" method="post" class="login-form">
+				                    <form role="form" action="index.php?controller=PotoController&action=connexion&motclef=null" method="post" class="login-form">
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-username">Email</label>
-				                        	<input type="text" name="form-username" placeholder="Email..." class="form-username form-control" id="form-username">
+				                    		<label class="sr-only" for="form-username">Pseudo</label>
+				                        	<input type="text" name="form-username" placeholder="Pseudo..." class="form-username form-control" id="form-username">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-password">Password</label>
@@ -80,13 +80,9 @@
 	                            </div>
 	                            <div class="form-bottom">
 				                    <form role="form" action="index.php?controller=PotoController&action=accueil" method="post" class="registration-form">
-				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-first-name">Nom</label>
-				                        	<input type="text" name="form-first-name" placeholder="Nom..." class="form-first-name form-control" id="form-first-name">
-				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Prenom</label>
-				                        	<input type="text" name="form-last-name" placeholder="Prenom..." class="form-last-name form-control" id="form-last-name">
+				                        	<label class="sr-only" for="pseudo">Pseudo</label>
+				                        	<input type="text" name="pseudo" placeholder="Pseudo..." class="form-last-name form-control" id="form-last-name">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>

@@ -4,6 +4,7 @@ class Parse {
 
 	public $controller = "PotoController";
 	public $action = "accueil";
+	public $get = "motclef";
 
 	public function __construct() {
 		$this->verif();

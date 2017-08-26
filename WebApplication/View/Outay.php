@@ -60,26 +60,27 @@ input[type=text], select {
   font-style: normal;
   color: #d0cccc;
 }
+
+.pseudoRecherche a {
+  text-decoration: none;
+  color: white;
+}
+
+.resultat {
+  background-color: #E6662A;
+  width: 30%;
+  padding-left: 13%;
+  border-radius: 20px;
+}
 </style>
 	<title>Test</title>
 </head>
 <body>
 
   <header>
-
-<input type="text" id="lname" name="lastname" placeholder="Rechercher un pseudo">
+    <input type="text" id="lname" name="lastname" placeholder="Rechercher un pseudo">
+    <div class="resultat" id="resultat"></div>
   </header>
-
-
-
-
-<section class="SectionStyle">
-
-	<input class="InputButton" type="submit" value="">
-</section>
-<footer class="FooterStyle">
-  Messages / Liste des copains
-</footer>
- <script src="assets/js/myscripts.js"></script> 
+  <script type="text/javascript" src="assets/js/myscripts.js"></script>
 </body>
 </html>

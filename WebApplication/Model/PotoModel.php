@@ -4,14 +4,13 @@ class PotoModel
 {
 	public function inscription() {
 		$this->connect = Database::instance();
-		$sql = $this->connect->prepare("INSERT INTO user(nom, prenom, email, mdp)
-										VALUES(:nom, :prenom, :email, :mdp)");
-		$sql->bindValue(':nom', $_POST['form-first-name']);
-		$sql->bindValue(':prenom', $_POST['form-last-name']);
+		$sql = $this->connect->prepare("INSERT INTO user(pseudo, email, mdp)
+										VALUES(:pseudo, :email, :mdp)");
+		$sql->bindValue(':pseudo', $_POST['pseudo']);
 		$sql->bindValue(':email', $_POST['form-email']);
 		$sql->bindValue(':mdp', password_hash($_POST['password'], PASSWORD_BCRYPT));
 		if ($sql->execute()) {
-			echo "Bienvenue" . " " . $_POST['form-last-name'] . " " . $_POST['form-first-name'] . " sur PotoOute!";
+			echo "Bienvenue" . " " . $_POST['pseudo'] . " sur PotoOute!";
 			return true;
 		}
 	}
@@ -20,15 +19,33 @@ class PotoModel
 		$this->connect = Database::instance();
 		$sql = $this->connect->prepare("SELECT *
 										FROM user
-										WHERE email = :email");
-		$sql->bindValue(':email', $_POST['form-username']);
+										WHERE pseudo = :pseudo");
+		$sql->bindValue(':pseudo', $_POST['form-username']);
 		if ($sql->execute()) {
 			$result = $sql->fetchAll();
 			foreach ($result as $row) {
 				session_start();
-				$_SESSION['email'] = $row['email'];
-				$_SESSION['nom'] = $row['nom'];
-				$_SESSION['prenom'] = $row['prenom'];
+				$_SESSION['id'] = $row['id'];
+				$_SESSION['pseudo'] = $row['pseudo'];
+			}
+		}
+	}
+
+	public function recherche() {
+		$this->connect = Database::instance();
+		if (isset($_GET['motclef'])) {
+			$motclef = $_GET['motclef'];
+			$sql = $this->connect->prepare("SELECT *
+										FROM user
+										WHERE pseudo LIKE :pseudo");
+			$sql->bindValue(':pseudo', '%' . $_GET['motclef'] . '%');
+			if ($sql->execute()) {
+				$result = $sql->fetchAll();			
+				foreach ($result as $row) {
+					$_SESSION['id2'] = $row['id'];
+					$_SESSION['pseudo2'] = $row['pseudo']; 
+					?> <p class="pseudoRecherche"><a href="#"> <? echo $_SESSION['pseudo2']; ?> </a></p> <?
+				}
 			}
 		}
 	}

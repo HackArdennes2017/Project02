@@ -22,14 +22,14 @@ class ModelVerif
 
 	public function verifEmailCo() {
 		$this->connect = Database::instance();
-		$sql = $this->connect->prepare("SELECT email, mdp
+		$sql = $this->connect->prepare("SELECT pseudo, mdp
 										FROM user
-										WHERE email = :email");
-		$sql->bindValue(':email', $_POST['form-username']);
+										WHERE pseudo = :pseudo");
+		$sql->bindValue(':pseudo', $_POST['form-username']);
 		if ($sql->execute()) {
 			$result = $sql->fetchAll();
 			foreach ($result as $row) {
-				if ($row['email'] == $_POST['form-username'] && password_verify($_POST['form-password'], $row['mdp'])) {
+				if ($row['pseudo'] == $_POST['form-username'] && password_verify($_POST['form-password'], $row['mdp'])) {
 					return true;
 				}
 				else {
