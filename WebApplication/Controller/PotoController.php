@@ -24,6 +24,12 @@ class PotoController
 				$requete->connexion();
 				include("View/Outay.php");
 			}
+			else {
+				include("View/accueuil.php");
+			}
+		}
+		else {
+			include("View/accueuil.php");
 		}
 	}
 }
