@@ -44,7 +44,7 @@ class PotoModel
 				foreach ($result as $row) {
 					$_SESSION['id2'] = $row['id'];
 					$_SESSION['pseudo2'] = $row['pseudo']; 
-					?> <p class="pseudoRecherche"><a href="#"> <? echo $_SESSION['pseudo2']; ?> </a></p> <?
+					?> <p class="pseudoRecherche"><a href="#"> <?php echo $_SESSION['pseudo2']; ?> </a></p> <?php
 				}
 			}
 		}
