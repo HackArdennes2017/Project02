@@ -1,9 +1,27 @@
+<?php
+  session_start();
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+  var latHelpingPerson;
+  var longHelpingPerson;
+  function getPersonposition(position) {
 
+                latHelpingPerson = position.coords.latitude;
+                longHelpingPerson = position.coords.longitude;
+                var element = document.getElementById('latitude');
+                var element2 = document.getElementById('longitude');
+                var input = document.getElementById('submit').click;
+                element.value = latHelpingPerson;
+                element2.value = longHelpingPerson;
+                input.submit();
+              }
+</script>
 <style>
 
 html {
@@ -119,6 +137,15 @@ div.desc{
 <body>
  <div class="loader"></div> 
  <h1 id="attente">En attente d'acceptation</h1>
+ <form action="www.google.com" method="post">
+   <input type="text" class="cache" id="latitude"><script>latHelpingPerson</script></input>
+   <input type="text" class="cache" id="longitude"><script>longHelpingPerson</script></input>
+   <input type="submit" id="submit"></input>
+ </form>
 <script type="text/javascript" src="assets/js/myscript.js"></script>
 </body>
 </html>
+<script>
+if(navigator.geolocation)
+  navigator.geolocation.getCurrentPosition(getPersonposition);
+</script>
