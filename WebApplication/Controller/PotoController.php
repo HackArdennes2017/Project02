@@ -44,6 +44,11 @@ class PotoController
 		$ver = new PotoModel();
 		$ver->attendre();
 	}
+
+	public function attendre2() {
+		$ver = new PotoModel();
+		$ver->attendre2();
+	}
 }
 
 include("Verification.php");
