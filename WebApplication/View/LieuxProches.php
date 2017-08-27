@@ -92,53 +92,33 @@ div.desc{
   }
 }
 
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-left: 40%;
+    margin-top: 40%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#attente {
+  margin-left: 20%;
+  color: white;
+}
+
 </style>
 	<title>Test</title>
 </head>
 <body>
-
-  <header>
-
-<input type="text" id="lname" name="lastname" placeholder="Rechercher un pseudo">
-  </header>
-<section class="SectionStyle">
-  <div class="DirtyHack">
-<table>
-  <tr>
-    <td>
-      <div>
-        <img src="assets/img/Lieu_strategique/entree.png" width="150" height="150">
-        <div class="desc">
-          à 10m
-        </div>
-      </div>
-    </td>
-    <td>
-      <img src="assets/img/Lieu_strategique/zanzibar.png" width="150" height="150">
-      <div class="desc">
-        à 42m
-      </div>
-    </td>
-  </tr>
-  <tr>
-  <td>
-    <img src="assets/img/Lieu_strategique/camping.png" width="150" height="150">
-    <div class="desc">
-      à 45m
-    </div>
-  </td>
-  <td>
-    <img src="assets/img/Lieu_strategique/groingroin.png" width="150" height="150">
-    <div class="desc">
-      à 50m
-    </div>
-  </td>
-  </tr>
-</table>
-</section>
-<footer class="FooterStyle">
-  Messages / Liste des copains
-</footer>
-
+ <div class="loader"></div> 
+ <h1 id="attente">En attente d'acceptation</h1>
+<script type="text/javascript" src="assets/js/myscript.js"></script>
 </body>
 </html>

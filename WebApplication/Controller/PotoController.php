@@ -40,8 +40,9 @@ class PotoController
 		$ver->recherche();
 	}
 
-	public function lieux() {
-		include("View/LieuxProches.php");
+	public function attendre() {
+		$ver = new PotoModel();
+		$ver->attendre();
 	}
 }
 

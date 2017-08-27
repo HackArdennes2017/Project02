@@ -44,9 +44,13 @@ class PotoModel
 				foreach ($result as $row) {
 					$_SESSION['id2'] = $row['id'];
 					$_SESSION['pseudo2'] = $row['pseudo']; 
-					?> <p class="pseudoRecherche"><a href="#"> <?php echo $_SESSION['pseudo2']; ?> </a></p> <?php
+					?> <p class="pseudoRecherche"><a href="index.php?controller=PotoController&action=Attendre"> <? echo $_SESSION['pseudo2']; ?> </a></p> <?
 				}
 			}
 		}
+	}
+
+	public function attendre() {
+		include("View/LieuxProches.php");
 	}
 }
