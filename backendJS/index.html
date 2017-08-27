@@ -1,0 +1,86 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:8080');
+
+  var user = {
+    userId: 15,
+    name: 'Jean'
+  };
+
+  var locationArray = {
+    15: {
+      locationId: 15,
+      name: 'Groin Groin'
+    }
+  };
+
+  var friendUser = {
+    18: {
+      userId: 18,
+      name: 'Jeanne'
+    },
+    15: {
+      userId: 15,
+        name: 'Jean'
+    }
+  };
+
+  socket.on('lost', function (user) {
+    console.log('Your friend '+user.name+' is lost !');
+  });
+
+  socket.on('move', function (location) {
+    console.log(location);
+  });
+
+  socket.on('meetingRequestResponse', function (data) {
+    console.log(data.targetUser.name+' '+data.response+' to meet you at '+data.location.name);
+  });
+
+  function lost () {
+    socket.emit('lost', user);
+  }
+
+  function lostFriend (friendId) {
+    socket.emit('lost', friendUser[friendId]);
+  }
+
+  function move(locationId) {
+    var data = {
+      location: locationArray[locationId],
+      user: user
+    };
+    socket.emit('move', data);
+  }
+
+  function meezonetingRequest (userId, locationId) {
+    var data = {
+      location: locationArray[locationId],
+      user: user,
+      targetUser: friendUser[userId]
+    };
+    socket.emit('meetingRequest', data);
+  }
+
+  function meetingRequestReponse (userId, locationId, response) {
+    var data = {
+      location: locationArray[locationId],
+      user: friendUser[userId],
+      targetUser: {
+        userId: 18,
+        name: 'Jeanne'
+      },
+      response: response
+    };
+    socket.emit('meetingRequestResponse', data);
+  }
+
+</script>
+
+<button onclick="lost();">I am lost</button>
+<button onclick="move(15);">Moving to 15</button>
+<button onclick="meetingRequest(18, 15);">Ask Jeanne to meet at groin groin</button>
+
+<button onclick="meetingRequestReponse(15, 15, 'accept');">Accept to meet at groin groin</button>
+
+<button onclick="lostFriend(18);">Jeanne is lost</button>
