@@ -53,4 +53,8 @@ class PotoModel
 	public function attendre() {
 		include("View/LieuxProches.php");
 	}
+
+	public function attendre2() {
+		include("View/evenement.php");
+	}
 }
