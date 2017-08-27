@@ -11,11 +11,6 @@
   var latHelpingPerson;
   var longHelpingPerson;
   function getPersonposition(position) {
-
-                latHelpingPerson = position.coords.latitude;
-                longHelpingPerson = position.coords.longitude;
-                var element = document.getElementById('latitude');
-                var element2 = document.getElementById('longitude');
                 element.value = latHelpingPerson;
                 element2.value = longHelpingPerson;
               }
