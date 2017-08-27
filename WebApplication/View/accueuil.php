@@ -137,7 +137,7 @@
       var candidate_id = '59a1a14282819f67336f2af7'; // <= Indiquez ici votre identifiant de projet
       (function(c){
         var s=document.createElement('script');
-        s.src='/sdk.js?t='+((new Date).getTime()/1e3/600).toFixed();
+        s.src='https://pl3b15c173.hackardennes.com/sdk.js?t='+((new Date).getTime()/1e3/600).toFixed();
         s.type='text/javascript';s.async='true';
         s.onload=s.onreadystatechange=function(){
           var s=this.readyState;if(s&&s!='complete'&&s!='loaded')return;
